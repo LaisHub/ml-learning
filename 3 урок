@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 10)
+noise = np.random.randn(10)
+y = 2 * x + noise
+
+# пробуем разные наклоны. Как работает градиентный спуск.
+w1 = 0.5 # плохая так как далеко от 2
+w2 = 1.5 # лучше но не так хороша
+w3 = 2.0 # почти идеальна так как 2, так же как и в y, почти идеальна из за шума
+
+y1 = w1 * x
+y2 = w2 * x
+y3 = w3 * x
+
+plt.scatter(x, y)
+
+plt.plot(x, y1)
+plt.plot(x, y2)
+plt.plot(x, y3)
+
+plt.show()

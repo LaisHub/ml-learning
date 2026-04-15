@@ -1,0 +1,9 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+noise = np.random.randn(10) # шум, рандом до 10
+x = np.arange(0, 10) # перечисление 0-9
+y = 5 * x + noise
+
+plt.scatter(x, y) # Точечный график
+plt.show() # показывает график

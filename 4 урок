@@ -1,0 +1,23 @@
+# Код по визуализация ошибки
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 10)
+noise = np.random.randn(10)
+y = 2 * x + noise
+
+# модель (предположим)
+w = 1.5
+y_pred = w * x
+
+plt.scatter(x, y)
+plt.plot(x, y_pred)
+
+# рисуем ошибки
+for i in range(len(x)):
+    plt.plot([x[i], x[i]], [y[i], y_pred[i]])
+
+plt.show()
+
+# вертикальные линии от точки к прямой, это показатель ошибки. Чем она короче, тем лучше модель.
