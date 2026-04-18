@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# данные
+x = np.arange(0, 10)
+noise = np.random.randn(10)
+y = 2 * x + noise
+
+# перебираем разные w
+for w in [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]:
+    y_pred = w * x
+    error = np.mean((y - y_pred) ** 2)
+    print(f"w = {w}, ошибка = {error}") # цикл считает ошибку для всех w
+
+# рисуем для одного значения (например, лучшего)
+w = 2.0
+y_pred = w * x
+
+plt.scatter(x, y)
+plt.plot(x, y_pred)
+
+plt.title("Лучшая линия (пример)")
+plt.show()
